@@ -35,5 +35,6 @@ private String firstName; //Remove space merger conflict
 	private Specialization specialization;
 	
 	private StaffType staffType;
+	//line added from git hub
 
 }
