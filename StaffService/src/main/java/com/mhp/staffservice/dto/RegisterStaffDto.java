@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class RegisterStaffDto {
 	
-private String firstName;
+private String firstName; //Remove space
 	
 	private String lastName;
 	
