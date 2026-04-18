@@ -8,6 +8,7 @@ import com.mhp.dao.PatientRepository;
 import com.mhp.dto.RegisterPatientRequestDto;
 import com.mhp.dto.RegisterPatientResponseDto;
 import com.mhp.dto.builder.PatientResponseDtoBuilder;
+import com.mhp.exception.PatientNotFoundException;
 import com.mhp.model.Patient;
 import com.mhp.service.PatientService;
 import com.mhp.utils.PatientIdGenerator;
@@ -22,6 +23,7 @@ public class PatientServiceImpl implements PatientService{
 	private final PatientIdGenerator patientIdGenerator;
 	
 	public PatientServiceImpl(PatientRepository patientRepository, PatientIdGenerator patientIdGenerator){
+		
 		this.patientRepository = patientRepository;
 		
 		this.patientIdGenerator = patientIdGenerator;
@@ -56,6 +58,15 @@ public class PatientServiceImpl implements PatientService{
 	        return PatientResponseDtoBuilder
 	                .buildPatientResponseDtoFromPatient(existingPatient);
 	    }
+	}
+
+	@Override
+	public RegisterPatientResponseDto getPatientByPhoneNumber(String phoneNumber) {
+		
+		Patient patientFromDb = patientRepository.findByPatientPhoneNumber(phoneNumber)
+													.orElseThrow(()->new PatientNotFoundException("Patient with phone number "+ phoneNumber +" doesn't exists."));
+		
+		return PatientResponseDtoBuilder.buildPatientResponseDtoFromPatient(patientFromDb);
 	}
 
 }

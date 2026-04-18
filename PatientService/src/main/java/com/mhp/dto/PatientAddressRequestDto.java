@@ -19,6 +19,6 @@ public class PatientAddressRequestDto {
 
 	private String country;
 
-	private String pinCode;
+	private String pincode;
 
 }
