@@ -10,8 +10,12 @@ name: Patient Service CI with Maven
 
 on:
   push:
+    paths:
+      - 'PatientService/**'
     branches: [ "main" ]
   pull_request:
+    paths:
+      - 'PatientService/**'
     branches: [ "main" ]
 
 jobs:
@@ -28,5 +32,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn clean install
+      run: 
+        cd PatientService
+        mvn clean install
 
