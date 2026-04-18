@@ -33,7 +33,7 @@ public class PatientController {
 	
 	}
 	
-	
+	// commit
 	@PostMapping("/register")
 	public ResponseEntity<?> registerPatient(@Valid @RequestBody RegisterPatientRequestDto registerPatientRequestDto, BindingResult result){
 		
