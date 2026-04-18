@@ -23,5 +23,5 @@ public class PatientAddressResponseDto {
 	
 	private String country;
 	
-	private String pinCode;
+	private String pincode;
 }

@@ -25,7 +25,7 @@ public class PatientBuilder {
 					.landmark(patientAddressRequestDto.getLandmark())
 					.city(patientAddressRequestDto.getCity())
 					.state(patientAddressRequestDto.getState())
-					.pincode(patientAddressRequestDto.getPinCode())
+					.pincode(patientAddressRequestDto.getPincode())
 					.country(patientAddressRequestDto.getCountry())
 					.build();
 					

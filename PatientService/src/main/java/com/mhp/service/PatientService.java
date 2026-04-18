@@ -7,4 +7,6 @@ public interface PatientService {
 
 	public RegisterPatientResponseDto registerPatient(RegisterPatientRequestDto registerPatientRequestDto);
 
+	public RegisterPatientResponseDto getPatientByPhoneNumber(String phoneNumber);
+
 }

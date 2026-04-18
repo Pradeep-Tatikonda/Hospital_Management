@@ -22,13 +22,15 @@ public class PatientAddress {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long patientAddressId;
 	
+	private String doorNumber;
+	
 	private String landmark;
 	
 	private String city;
 	
 	private String state;
 	
-	private String  pincode;
+	private String pincode;
 	
 	private String country;
 
